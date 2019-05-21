@@ -629,7 +629,7 @@ colsType=  [] #['lag1D','month','hour','dayOfWeek']
 #Fin TO DO
 #########
 
-colsToKeep=[s for s in Xinput.columns.get_values() if any(cs in s for cs in colsType)]
+colsToKeep=[s for s in Xinput_scaled.columns.get_values() if any(cs in s for cs in colsType)]
 
 if('ds' in colsToKeep):#cette variable a été décomposée en mois, heure, jour et n'est plus une variable d'intérêt
     colsToKeep.remove('ds')

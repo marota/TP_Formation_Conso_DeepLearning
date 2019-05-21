@@ -413,7 +413,6 @@ plotYourNeuralNet(modelVide)
 # ## **Defi!**
 # Créez vous un reseau de neurones en forme de noeud papillon.
 
-# +
 #votre newKerasModel à créer ici
 
 
@@ -482,6 +481,10 @@ hiddenLayers=[nInputs,nInputs,nInputs,nInputs,nInputs]
 first_model = newKerasModel(nInputs,nOutput, hiddenLayers)
 # -
 
+##TO DO
+# afficher le nombre de paramètres de votre modèle avec la fonction summary de Keras
+
+
 first_model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_percentage_error'])
 
 # On crée ici une instance de l'utilitaire tensorboard qui va nous permettre de visualiser les courbes d'apprnetissage de nos différents modèles.
@@ -509,7 +512,7 @@ first_model.fit(X, YconsoTrain['y'], epochs=100, batch_size=100, validation_spli
 # D'après les informations de logs exposées ici, quelle semble être la perfomance atteinte par votre réseau de neurones ? 
 #
 
-#Votre réponse ici
+# Votre réponse ici
 
 
 # # Tensorboard
@@ -526,7 +529,7 @@ first_model.fit(X, YconsoTrain['y'], epochs=100, batch_size=100, validation_spli
 # Vous devriez visualiser les courbes de 2 modèles: celui que vous venez d'entrainer et un modèle qui avait été entrainé de la même manière mais avec des donénes non normalisée. Que constatez-vous ? Comment l'expliquez-vous ?
 #
 
-#Votre réponse ici
+# Votre réponse ici
 
 
 # ## Evaluation de la qualité du modèle
@@ -574,7 +577,7 @@ iplot([{"x": YconsoTest1['ds'], "y": ErreursTest1}])
 # Quelles sont les heures ou les journées avec les erreurs les plus importantes. Avez-vous une idée à quoi pourrait correspondre ces heures ou ces jours ?
 #
 
-#Votre réponse ici
+# Votre réponse ici
 
 
 # # A vous de jouer, faites fonctionner vos neurones :
@@ -616,7 +619,7 @@ colsType=  [] #['lag1D','month','hour','dayOfWeek']
 #Fin TO DO
 #########
 
-colsToKeep=[s for s in Xinput.columns.get_values() if any(cs in s for cs in colsType)]
+colsToKeep=[s for s in Xinput_scaled.columns.get_values() if any(cs in s for cs in colsType)]
 
 if('ds' in colsToKeep):#cette variable a été décomposée en mois, heure, jour et n'est plus une variable d'intérêt
     colsToKeep.remove('ds')
@@ -646,6 +649,9 @@ hiddenLayers=[nInputs,nInputs,nInputs,nInputs,nInputs]
 
 votre_model_scaled_1 = newKerasModel(nInputs,nOutput, hiddenLayers)
 # -
+
+# on affiche le nombre de paramètres de votre modèle avec la fonction summary de Keras
+votre_model_scaled_1.summary()
 
 votre_model_scaled_1.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_percentage_error'])
 
