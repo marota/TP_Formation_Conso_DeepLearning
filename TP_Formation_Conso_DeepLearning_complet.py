@@ -161,7 +161,8 @@ print(Xinput_scaled.shape)
 # ## **Question**
 # Que représentent ici ces dimensions ?
 
-# Votre reponse ici
+#Votre reponse ici
+
 
 
 print("voici toutes les variables explicatives que l'on peut utiliser")
@@ -413,7 +414,7 @@ plotYourNeuralNet(modelVide)
 # ## **Defi!**
 # Créez vous un reseau de neurones en forme de noeud papillon.
 
-#votre newKerasModel à créer ici
+# votre newKerasModel à créer ici
 
 
 
@@ -479,10 +480,12 @@ nOutput=1
 hiddenLayers=[nInputs,nInputs,nInputs,nInputs,nInputs]
 
 first_model = newKerasModel(nInputs,nOutput, hiddenLayers)
-# -
 
-##TO DO
-# afficher le nombre de paramètres de votre modèle avec la fonction summary de Keras
+# +
+
+# on affiche le nombre de paramètres de votre modèle avec la fonction summary de Keras
+first_model.summary()
+# -
 
 
 first_model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_percentage_error'])
@@ -512,7 +515,8 @@ first_model.fit(X, YconsoTrain['y'], epochs=100, batch_size=100, validation_spli
 # D'après les informations de logs exposées ici, quelle semble être la perfomance atteinte par votre réseau de neurones ? 
 #
 
-# Votre réponse ici
+#Votre réponse ici
+
 
 
 # # Tensorboard

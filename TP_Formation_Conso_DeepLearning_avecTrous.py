@@ -161,7 +161,8 @@ print(Xinput_scaled.shape)
 # ## **Question**
 # Que représentent ici ces dimensions ?
 
-# Votre reponse ici
+#Votre reponse ici
+
 
 
 print("voici toutes les variables explicatives que l'on peut utiliser")
@@ -426,7 +427,6 @@ plotYourNeuralNet(modelVide)
 # ## **Defi!**
 # Créez vous un reseau de neurones en forme de noeud papillon.
 
-# +
 #votre newKerasModel à créer ici
 
 
@@ -495,6 +495,10 @@ hiddenLayers=[nInputs,nInputs,nInputs,nInputs,nInputs]
 first_model = newKerasModel(nInputs,nOutput, hiddenLayers)
 # -
 
+#TO DO
+#afficher le nombre de paramètres de votre modèle avec la fonction summary de Keras
+
+
 first_model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_percentage_error'])
 
 # On crée ici une instance de l'utilitaire tensorboard qui va nous permettre de visualiser les courbes d'apprnetissage de nos différents modèles.
@@ -525,6 +529,7 @@ first_model.fit(X, YconsoTrain['y'], epochs=100, batch_size=100, validation_spli
 #Votre réponse ici
 
 
+
 # # Tensorboard
 # c'est un utilitaire de tensorflow qui permet de visualiser en temps réel les courbes d'apprentissage des réseau de neurones et est donc utile pour arrêter l'apprentissage si les progrès sont faibles.
 #
@@ -539,7 +544,7 @@ first_model.fit(X, YconsoTrain['y'], epochs=100, batch_size=100, validation_spli
 # Vous devriez visualiser les courbes de 2 modèles: celui que vous venez d'entrainer et un modèle qui avait été entrainé de la même manière mais avec des donénes non normalisée. Que constatez-vous ? Comment l'expliquez-vous ?
 #
 
-#Votre réponse ici
+# Votre réponse ici
 
 
 # ## Evaluation de la qualité du modèle
@@ -587,7 +592,7 @@ iplot([{"x": YconsoTest1['ds'], "y": ErreursTest1}])
 # Quelles sont les heures ou les journées avec les erreurs les plus importantes. Avez-vous une idée à quoi pourrait correspondre ces heures ou ces jours ?
 #
 
-#Votre réponse ici
+# Votre réponse ici
 
 
 # # A vous de jouer, faites fonctionner vos neurones :
@@ -659,6 +664,9 @@ hiddenLayers=[nInputs,nInputs,nInputs,nInputs,nInputs]
 
 votre_model_scaled_1 = newKerasModel(nInputs,nOutput, hiddenLayers)
 # -
+
+# on affiche le nombre de paramètres de votre modèle avec la fonction summary de Keras
+votre_model_scaled_1.summary()
 
 votre_model_scaled_1.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolute_percentage_error'])
 
